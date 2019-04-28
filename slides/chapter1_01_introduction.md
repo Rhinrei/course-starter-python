@@ -1,8 +1,8 @@
----
+﻿---
 type: slides
 ---
 
-# Introduction
+# Задачи классификации
 
 Notes: Text at the end of a slide prefixed like this will be displayed as
 speaker notes on the side. Slides can be separated with a divider: ---.
@@ -11,20 +11,11 @@ speaker notes on the side. Slides can be separated with a divider: ---.
 
 # This is a slide
 
-```python
-# Print something
-print("Hello world")
-```
+Анализ тональности подразумевает отнесение текста к той или иной категории. Так, мы можем разбить все тексты на "положительные", "нейтральные" и "отрицательные", или более абстрактно - на "оценочные" и "фактические". Все такие деления означают, что создаются определённые классы, по которым мы разбиваем анализируемые примеры. В этом и состоит задача классификации.
 
-```out
-Hello world
-```
+Часто качественные переменные называют категориальными (эти термины взаимозаменяемы). Предсказание качественного отклика для некоторого наблюдения можно назвать классификацией, поскольку это наблюдение относят к определенной категории (классу).
 
-- Slides can have code, bullet points, tables and pretty much all other Markdown
-  elements.
-- This is another bullet point.
-
-<img src="profile.jpg" alt="This image is in /static" width="25%">
+С другой стороны, методы классификации часто в качестве основы для выполнения классификации сначала предсказывают вероятность каждой из категорий качественной переменной и в этом смысле они ведут себя подобно методам регрессии.
 
 Notes: Some more notes go here
 
