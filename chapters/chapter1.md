@@ -60,3 +60,10 @@ This is a hint.
 </codeblock>
 
 </exercise>
+
+<exercise id="4" title="Introduction" type="slides">
+
+<slides source="chapter2_01_theory">
+</slides>
+
+</exercise>
