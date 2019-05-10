@@ -1,5 +1,5 @@
----
-title: 'Chapter 1: Getting started'
+﻿---
+title: 'Chapter 1: Базовые термины'
 description:
   'This chapter will teach you about many cool things and introduce you to the
   most important concepts of the course.'
@@ -16,31 +16,32 @@ id: 1
 
 </exercise>
 
-<exercise id="2" title="Getting Started">
+<exercise id="2" title="Поговорим о категориальных переменных">
 
-Let's ask some questions about the slides. Whats the correct answer?
+Выберите категориальную переменную:
 
 <choice>
-<opt text="Answer one">
+<opt text="Возраст">
 
-This is not the correct answer.
-
-</opt>
-
-<opt text="Answer two" correct="true">
-
-Good job!
+Если очень постараться, то может быть, но вообще нет.
 
 </opt>
 
-<opt text="Answer three">
+<opt text="Пол" correct="true">
 
-This is not correct either.
+И это правильный ответ!
+
+</opt>
+
+<opt text="Температура">
+
+Не угадал.
 
 </opt>
 </choice>
 
 </exercise>
+
 
 <exercise id="3" title="First steps">
 
@@ -57,5 +58,12 @@ the one for the instructions below.
 This is a hint.
 
 </codeblock>
+
+</exercise>
+
+<exercise id="4" title="Introduction" type="slides">
+
+<slides source="chapter2_01_theory">
+</slides>
 
 </exercise>

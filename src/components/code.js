@@ -16,7 +16,13 @@ function getFiles({ allCode }) {
 }
 
 function makeTest(template, testFile, solution) {
-    return template.replace(/\${solution}/g, solution).replace(/\${test}/g, testFile)
+    // Escape quotation marks in the solution code, for cases where we
+    // can only place the solution in regular quotes.
+    const solutionEscaped = solution.replace(/"/g, '\\"')
+    return template
+        .replace(/\${solutionEscaped}/g, solutionEscaped)
+        .replace(/\${solution}/g, solution)
+        .replace(/\${test}/g, testFile)
 }
 
 class CodeBlock extends React.Component {
@@ -82,6 +88,7 @@ class CodeBlock extends React.Component {
                                     repo
                                     branch
                                     kernelType
+                                    lang
                                     debug
                                 }
                             }
@@ -98,7 +105,7 @@ class CodeBlock extends React.Component {
                 `}
                 render={data => {
                     const { testTemplate } = data.site.siteMetadata
-                    const { repo, branch, kernelType, debug } = data.site.siteMetadata.juniper
+                    const { repo, branch, kernelType, debug, lang } = data.site.siteMetadata.juniper
                     const files = getFiles(data)
                     const sourceFile = files[sourceId]
                     const solutionFile = files[solutionId]
@@ -111,6 +118,7 @@ class CodeBlock extends React.Component {
                                     classNames={juniperClassNames}
                                     repo={repo}
                                     branch={branch}
+                                    lang={lang}
                                     kernelType={kernelType}
                                     debug={debug}
                                     actions={({ runCode }) => (

@@ -12,11 +12,16 @@ back-end code execution uses [Binder](https://mybinder.org) 💖
 
 ## ✅ Quickstart
 
-1. Fork this repo, install and make sure the app is running.
-2. Customize the `meta.json` and `binder/requirements.txt`.
-3. Build a [Binder](https://mybinder.org) from the repo.
-4. Add content and customize the theme as needed.
-5. Deploy the app, e.g. to [Netlify](https://netlify.com).
+1. [Import](https://github.com/new/import) this repo, install it and make sure
+   the app is running locally.
+2. Customize the [`meta.json`](meta.json) and
+   [`binder/requirements.txt`](binder/requirements.txt).
+3. Build a [Binder](https://mybinder.org) from the `binder` branch of this repo.
+4. Add content (chapters, exercises and slides) and optionally add separate
+   content license.
+5. Customize the UI theme in [`theme.sass`](theme.sass) and update images in
+   [`static`](static) as needed.
+6. Deploy the app, e.g. to [Netlify](https://netlify.com).
 
 ### Running the app
 
@@ -63,11 +68,12 @@ Gatsby to see the changes if you're editing it while the server is running.**
 | `testTemplate`       | Template used to validate the answers. `${solution}` will be replaced with the user code and `${test}` with the contents of the test file. |
 | `juniper.repo`       | Repo to build on Binder in `user/repo` format. Usually the same as this repo.                                                              |
 | `juniper.branch`     | Branch to build. Ideally not `master`, so the image is not rebuilt every time you push.                                                    |
+| `juniper.lang`       | Code language for syntax highlighting.                                                                                                     |
 | `juniper.kernelType` | The name of the kernel to use.                                                                                                             |
 | `juniper.debug`      | Logs additional debugging info to the console.                                                                                             |
 | `showProfileImage`   | Whether to show the profile image in the footer. If `true`, a file `static/profile.jpg` needs to be available.                             |
 | `footerLinks`        | List of objects with `"text"` and `"url"` to display as links in the footer.                                                               |
-| `theme`              | Currently only used for the, progressive web app, e.g. as the theme color on mobile. For the UI theme, edit `theme.sass`.                  |
+| `theme`              | Currently only used for the progressive web app, e.g. as the theme color on mobile. For the UI theme, edit `theme.sass`.                   |
 
 ### Static assets
 
@@ -204,9 +210,10 @@ Container to display slides interactively using Reveal.js and a Markdown file.
 
 Container for multiple-choice question.
 
-| Argument     | Type  | Description                              |
-| ------------ | ----- | ---------------------------------------- |
-| **children** | nodes | Only `<opt>` components for the options. |
+| Argument     | Type            | Description                                                                                  |
+| ------------ | --------------- | -------------------------------------------------------------------------------------------- |
+| `id`         | string / number | Optional unique ID. Can be used if more than one choice question is present in one exercise. |
+| **children** | nodes           | Only `<opt>` components for the options.                                                     |
 
 ```markdown
 <choice>
