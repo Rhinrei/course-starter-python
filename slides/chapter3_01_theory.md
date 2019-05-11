@@ -27,8 +27,10 @@ https://ru.wikipedia.org/wiki/Наивный_байесовский_класси
 Зададим колонку 'review' как X – переменная для обучения, а зависимую 'rating' как Y – целевую переменную.
 
 ```python
-from sklearn.naive_bayes import MultinomialNB
-
+# импортируем комплементарную модель
+from sklearn.naive_bayes import ComplementNB
+X = vectorizer.fit_transform(hotels_df['review'].values)
+Y = hotels_df['rating'].values
 ```
 
 Notes: Для модели необходимы переменные количественного типа, поэтому сами отзывы мы приводи к числовому виду с помощью векторизатора, а оценки оставляем как есть, так как они уже представлены в числовом виде.

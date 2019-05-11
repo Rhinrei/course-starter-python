@@ -1,4 +1,6 @@
-with open("exercises/tweets.csv") as f:
-    for i in range(1,5):
-        line = f.readline()
-        print(line)
+import pandas as pd
+pd.set_option('display.expand_frame_repr', False)
+
+tweets_csv = pd.read_csv("exercises/tweets.csv")
+tweets_df = pd.DataFrame(tweets_csv)
+print(tweets_df.iloc[:, 1:4])
