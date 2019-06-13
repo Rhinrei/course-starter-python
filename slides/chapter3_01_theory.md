@@ -30,31 +30,39 @@ https://ru.wikipedia.org/wiki/Наивный_байесовский_класси
 # импортируем комплементарную модель
 from sklearn.naive_bayes import ComplementNB
 X = vectorizer.fit_transform(hotels_df['review'].values)
-Y = hotels_df['rating'].values
+y = hotels_df['rating'].values
+model = ComplementNB()
 ```
 
-Notes: Для модели необходимы переменные количественного типа, поэтому сами отзывы мы приводи к числовому виду с помощью векторизатора, а оценки оставляем как есть, так как они уже представлены в числовом виде.
+Notes: Для модели необходимы переменные количественного типа, поэтому сами отзывы мы приводим к числовому виду с помощью векторизатора, а оценки оставляем как есть, так как они уже представлены в числовом виде.
 
 ---
 
 # Обучаем и тестируем модель
 
-Для обучения модели используется команда fit, которой передаются все тренировочные данные (наши X и Y). Модель обработает их и выведет для себя закономерности.
-Для проверки качества работы модели используются тестовые данные – те, которых не было в тренировочном корпусе и для которых мы знаем правильные ответы.
-Оценить плюсы работы модели с большим объёмом тестовых данных можно с помощью автоматических метрик (???). А вот если с тестовыми данными проблема (их мало или нет совсем), то можно тестировать модель и на тренировочных данных.
+Для обучения модели используется команда fit, которой передаются все тренировочные данные (наши X и Y). Модель обработает их и выведет для себя закономерности. Для проверки качества работы модели используются тестовые данные – те, которых не было в тренировочном корпусе и для которых мы знаем правильные ответы. Чтобы поделить выборку на тестовую и обучающую в sklearn есть специальная функция train_test_split.
+```python
+from sklearn.model_selection import train_test_split
+# поделим выборку на тестовую и обучающую:
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.33, random_state=42)
+# обучим модель
+model.fit(X, Y)
+# получим предсказанные значения
+predicted = model.predict(X_test)
+```
+Чтобы понять, насколько хорошо наша модель предсказала значения, воспользуемся метрикой accuracy (точность), которая вычисляет долю правильных ответов:
 
 ```python
-
+from sklearn.metrics import accuracy_score
+accuracy_score(y_test, predicted)
 ```
-
+```out
+0.751416052153468
+```
 Notes: 
-
+- Подробнее об аргументах функции train_test_split см. 
+https://scikit-learn.org/stable/modules/generated/sklearn.model_selection.train_test_split.html
+- Чем выше уровень точности, тем лучше, однако, если точность равна 1, это означает, что модель переобучилась - она не вывела обобщающую закономерность и потеряла предсказательную способность.
 ---
 
-# Let's practice!
-
-Notes: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam tristique
-libero at est congue, sed vestibulum tortor laoreet. Aenean egestas massa non
-commodo consequat. Curabitur faucibus, sapien vitae euismod imperdiet, arcu erat
-semper urna, in accumsan sapien dui ac mi. Pellentesque felis lorem, semper nec
-velit nec, consectetur placerat enim.
+# Перейдем к заданиям
