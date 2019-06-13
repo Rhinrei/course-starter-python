@@ -7,6 +7,6 @@ tweets_csv = pd.read_csv("exercises/tweets.csv")
 tweets_df = pd.DataFrame(tweets_csv)
 
 vectorizer = TfidfVectorizer()
-X = vectorizer.fit_transform(tweets_df['ttext'])
+X = vectorizer.fit_transform(tweets_df['ttext'].astype('U'))
 y = tweets_df['class'].values
 ____ = train_test_split(____)
