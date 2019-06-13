@@ -57,7 +57,7 @@ from sklearn.metrics import accuracy_score
 accuracy_score(y_test, predicted)
 ```
 ```out
-0.751416052153468
+0.6185475521372578
 ```
 Notes: 
 - Подробнее об аргументах функции train_test_split см. 

@@ -1,22 +1,21 @@
 ﻿---
 title: 'Chapter 1: Базовые термины'
 description:
-  'This chapter will teach you about many cool things and introduce you to the
-  most important concepts of the course.'
+  'Познакомимся с основной терминологией.'
 prev: null
 next: /chapter2
 type: chapter
 id: 1
 ---
 
-<exercise id="1" title="Introduction" type="slides">
+<exercise id="1" title="Введение" type="slides">
 
 <slides source="chapter1_01_introduction">
 </slides>
 
 </exercise>
 
-<exercise id="2" title="Задание 1">
+<exercise id="2" title="На какую переменную будем смотреть?">
 
 Нам нужно предсказать рейтинг отеля (1-5 звёзд). Для каждого отеля у нас есть данные по частоте смены белья, наличию шведского стола, количеству люксовых номеров. Что в этом случае будет зависимой переменной?
 
@@ -48,7 +47,7 @@ id: 1
 </exercise>
 
 
-<exercise id="3" title="Задание 2">
+<exercise id="3" title="Нужно ли категоризовать переменные?">
 
 По тем же данным об отелях. Какая переменная будет категориальной, если примерная строка таблицы с данными выглядит так:
 
@@ -81,7 +80,7 @@ id: 1
 
 </exercise>
 
-<exercise id="4" title="Задание 3">
+<exercise id="4" title="Вспомним векторизацию">
 
 Для чего нужна векторизация?
 
@@ -111,7 +110,7 @@ id: 1
 
 
 </exercise>
-<exercise id="5" title="Задание 4">
+<exercise id="5" title="И снова об отелях">
 
 Снова об отелях. Какую переменные нужно векторизовать, если примерная строка таблицы с данными выглядит так:
 
