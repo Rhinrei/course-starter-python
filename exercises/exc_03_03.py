@@ -5,7 +5,7 @@ from sklearn.model_selection import train_test_split
 from ____ import accuracy_score
 pd.set_option('display.expand_frame_repr', False)
 
-tweets_csv = pd.read_csv("tweets.csv")
+tweets_csv = pd.read_csv("exercises/tweets.csv")
 tweets_df = pd.DataFrame(tweets_csv)
 
 vectorizer = TfidfVectorizer()

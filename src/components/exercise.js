@@ -58,7 +58,7 @@ const Exercise = ({ id, title, type, children }) => {
                             toggleComplete={handleSetCompleted}
                         />
                         <Button onClick={handleNext} variant="secondary" small>
-                            Next
+                            Следующее
                         </Button>
                     </footer>
                 </div>

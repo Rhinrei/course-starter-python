@@ -4,4 +4,4 @@ def test():
     assert "pd.DataFrame(tweets_csv)" in __solution__, "Вы приводите csv к dataframe?"
     assert ".iloc[:, 1:4]" in __solution__, "Вы печатаете только некоторые строки?"
 
-    __msg__.good("Well done!")
+    __msg__.good("Отлично!")

@@ -73,8 +73,8 @@ class CodeBlock extends React.Component {
             output: classes.output,
         }
         const hintActions = [
-            { text: 'Show solution', onClick: () => this.handleShowSolution() },
-            { text: 'Reset', onClick: () => this.handleReset() },
+            { text: 'Показать ответ', onClick: () => this.handleShowSolution() },
+            { text: 'Очистить решение', onClick: () => this.handleReset() },
         ]
 
         return (
@@ -123,7 +123,7 @@ class CodeBlock extends React.Component {
                                     debug={debug}
                                     actions={({ runCode }) => (
                                         <>
-                                            <Button onClick={() => runCode()}>Run Code</Button>
+                                            <Button onClick={() => runCode()}>Запустить код</Button>
                                             {testFile && (
                                                 <Button
                                                     variant="primary"
@@ -133,7 +133,7 @@ class CodeBlock extends React.Component {
                                                         )
                                                     }
                                                 >
-                                                    Submit
+                                                    Отправить ответ
                                                 </Button>
                                             )}
                                         </>

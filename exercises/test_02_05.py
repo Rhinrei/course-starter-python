@@ -5,4 +5,4 @@ def test():
     assert "tweets_df['ttext']" in __solution__, "Вы выбираете независимую переменную в качестве Х?"
     assert "tweets_df['class']" in __solution__, "Вы выбираете зависимую переменную в качестве Y?"
 
-    __msg__.good("Well done!")
+    __msg__.good("Отлично!")

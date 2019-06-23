@@ -8,4 +8,4 @@ def test():
     assert "print(DATA[0])" in __solution__, "Are you printing the first record?"
     assert some_var == len(DATA), "Are you getting the correct length?"
 
-    __msg__.good("Well done!")
+    __msg__.good("Отлично!")

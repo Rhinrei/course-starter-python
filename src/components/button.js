@@ -25,12 +25,12 @@ export const CompleteButton = ({ completed, toggleComplete, small = true }) => {
     return (
         <Button small={small} onClick={toggleComplete} className={buttonClassNames}>
             {!completed ? (
-                'Mark as completed'
+                'Пометить как выполненное'
             ) : (
                 <>
                     <IconCheck width={14} height={14} className={classes.completeIcon} />{' '}
-                    <span className={classes.completeLabel}>Completed</span>{' '}
-                    <span className={classes.completeLabelHover}>Remove from completed</span>
+                    <span className={classes.completeLabel}>Выполнено</span>{' '}
+                    <span className={classes.completeLabelHover}>Удалить из выполненных</span>
                 </>
             )}
         </Button>

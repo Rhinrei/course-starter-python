@@ -6,5 +6,5 @@ tweets_csv = pd.read_csv("exercises/tweets.csv")
 tweets_df = pd.DataFrame(tweets_csv)
 
 vectorizer = TfidfVectorizer()
-X = vectorizer.fit_transform(tweets_df['ttext'].values)
+X = vectorizer.fit_transform(tweets_df['ttext'].values.astype('U'))
 Y = tweets_df['class'].values
